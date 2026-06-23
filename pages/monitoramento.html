@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Monitoramento - OrbitSafe</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+    <header>
+        <div class="layout-container">
+            <div class="logo"><a href="../index.html">ORBIT<span>SAFE</span></a></div>
+            <button id="hamburger-menu" aria-expanded="false" aria-label="Abrir Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li class="active"><a href="monitoramento.html">Monitoramento</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="integrantes.html">Equipe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="layout-container container-monitoramento" style="padding-top: 60px;">
+        <div class="titulo-central">
+            <h2>Central de Monitoramento Global</h2>
+            <p>Status das conexões satelitais LEO e telemetria de resiliência em tempo real.</p>
+        </div>
+
+        <div class="cards-indicadores">
+            <div class="card">
+                <h3>Conexões Ativas</h3>
+                <div class="numero" id="conexoes-num">14.820</div>
+                <div class="status operacional">Rede Dinâmica</div>
+            </div>
+            <div class="card">
+                <h3>Saturação Média</h3>
+                <div class="numero" id="chamados-num">96.4%</div>
+                <div class="status operacional">Margem Segura</div>
+            </div>
+            <div class="card">
+                <h3>Nós de Órbita</h3>
+                <div class="numero">184</div>
+                <div class="status operacional">Sincronizados</div>
+            </div>
+        </div>
+
+        <div class="painel-grade">
+            <section class="bloco-mapa">
+                <h3>Varredura de Segmentos Orbitais</h3>
+                <div class="mapa-ficticio">
+                    <div class="radar-container">
+                        <div class="radar-ring"></div>
+                        <div class="radar-ring"></div>
+                        <div class="radar-ring"></div>
+                        <div class="radar-axis-h"></div>
+                        <div class="radar-axis-v"></div>
+                        <div class="radar-sweep"></div>
+                        <div class="radar-blip"></div>
+                        <div class="radar-blip"></div>
+                        <div class="radar-blip"></div>
+                        <div class="radar-blip"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bloco-ocorrencias">
+                <h3>Alertas do Sistema Operacional</h3>
+                <ul class="lista-alertas">
+                    <li class="alerta critico">
+                        <strong>Anomalia Eletromagnética Detectada</strong>
+                        <p>Tempestade solar afetando a banda K no quadrante LEO-Sudeste. Roteamento alternativo engajado.</p>
+                    </li>
+                    <li class="alerta moderado">
+                        <strong>Sobrecarga Preventiva - Região Sul</strong>
+                        <p>Pico abrupto de tráfego emergencial civil. Alocação de malha expandida para mais 250MHz.</p>
+                    </li>
+                    <li class="alerta informativo">
+                        <strong>Manutenção de Altitude Concluída</strong>
+                        <p>Satélite OrbitSafe-B4 reposicionado com sucesso para estabilização de telemetria.</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <button id="btn-open-sos" title="Disparar Alerta SOS Emergencial">🚨</button>
+    <div id="modal-sos" class="modal-container">
+        <div class="modal-conteudo">
+            <button class="btn-fechar" id="btn-close-sos">&times;</button>
+            <h3><span>🚨</span> Solicitação Emergencial SOS</h3>
+            <form id="form-sos">
+                <div class="grupo-campo"><label for="nome-sos">Organização</label><input type="text" id="nome-sos"><span class="msg-erro" id="erro-nome-sos"></span></div>
+                <div class="grupo-campo"><label for="localizacao">Coordenadas</label><input type="text" id="localizacao"><span class="msg-erro" id="erro-localizacao"></span></div>
+                <div class="grupo-campo"><label for="gravidade">Nível</label><select id="gravidade"><option value="">Selecione...</option><option value="alto">Alto</option></select><span class="msg-erro" id="erro-gravidade"></span></div>
+                <div class="grupo-campo"><label for="mensagem-sos">Detalhes</label><textarea id="mensagem-sos" rows="3"></textarea><span class="msg-erro" id="erro-mensagem-sos"></span></div>
+                <button type="submit">Transmitir Sinal SOS</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-sos-feedback" class="modal-container"><div class="modal-conteudo" style="text-align: center;"><h3 style="justify-content: center; color: var(--success);">📡 Conexão Estabelecida</h3><button class="btn-principal" id="btn-fechar-sos-feedback">Entendido</button></div></div>
+
+    <footer>
+        <div class="layout-container">
+            <p>&copy; 2026 ORBITSAFE. Todos os direitos reservados. Projeto Global Solution Front-End.</p>
+            <p>Status da Rede: <span style="color: var(--success); font-weight: 600;">● Operacional</span></p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

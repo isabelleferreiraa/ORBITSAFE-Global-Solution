@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Equipe - OrbitSafe</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+    <header>
+        <div class="layout-container">
+            <div class="logo"><a href="../index.html">ORBIT<span>SAFE</span></a></div>
+            <button id="hamburger-menu" aria-expanded="false" aria-label="Abrir Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="monitoramento.html">Monitoramento</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li class="active"><a href="integrantes.html">Equipe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="layout-container" style="padding-top: 60px;">
+        <section class="secao-equipe">
+            <h2>Engenheiros do Ecossistema</h2>
+            <p>Desenvolvedores responsáveis pela sustentabilidade e arquitetura front-end da plataforma <strong>ORBITSAFE</strong>.</p>
+            
+            <div class="grid-equipe">
+                <article class="card-integrante">
+                    <img src="https://via.placeholder.com/130" alt="Foto do Integrante">
+                    <h3>Isabelle Ferreira</h3>
+                    <p>RM 550000</p>
+                    <span class="cargo">Front-End Developer</span>
+                    <div class="links-sociais">
+                        <a href="https://github.com" target="_blank" class="github-link">GitHub</a>
+                        <a href="https://linkedin.com" target="_blank" class="linkedin-link">LinkedIn</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="repositorio-projeto">
+            <h3>Repositório de Código Aberto</h3>
+            <p>Confira a árvore de commits estruturada, documentação técnica detalhada e o ecossistema completo no GitHub.</p>
+            <a href="https://github.com" target="_blank" class="btn-principal">Ver Código Fonte no GitHub</a>
+        </section>
+    </main>
+
+    <button id="btn-open-sos" title="Disparar Alerta SOS Emergencial">🚨</button>
+    <div id="modal-sos" class="modal-container">
+        <div class="modal-conteudo">
+            <button class="btn-fechar" id="btn-close-sos">&times;</button>
+            <h3><span>🚨</span> Solicitação Emergencial SOS</h3>
+            <form id="form-sos">
+                <div class="grupo-campo"><label for="nome-sos">Organização</label><input type="text" id="nome-sos"><span class="msg-erro" id="erro-nome-sos"></span></div>
+                <div class="grupo-campo"><label for="localizacao">Coordenadas</label><input type="text" id="localizacao"><span class="msg-erro" id="erro-localizacao"></span></div>
+                <div class="grupo-campo"><label for="gravidade">Nível</label><select id="gravidade"><option value="">Selecione...</option><option value="alto">Alto</option></select><span class="msg-erro" id="erro-gravidade"></span></div>
+                <div class="grupo-campo"><label for="mensagem-sos">Detalhes</label><textarea id="mensagem-sos" rows="3"></textarea><span class="msg-erro" id="erro-mensagem-sos"></span></div>
+                <button type="submit">Transmitir Sinal SOS</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-sos-feedback" class="modal-container"><div class="modal-conteudo" style="text-align: center;"><h3 style="justify-content: center; color: var(--success);">📡 Conexão Estabelecida</h3><button class="btn-principal" id="btn-fechar-sos-feedback">Entendido</button></div></div>
+
+    <footer>
+        <div class="layout-container">
+            <p>&copy; 2026 ORBITSAFE. Todos os direitos reservados. Projeto Global Solution Front-End.</p>
+            <p>Status da Rede: <span style="color: var(--success); font-weight: 600;">● Operacional</span></p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
