@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - OrbitSafe</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+    <header>
+        <div class="layout-container">
+            <div class="logo"><a href="../index.html">ORBIT<span>SAFE</span></a></div>
+            <button id="hamburger-menu" aria-expanded="false" aria-label="Abrir Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="active"><a href="sobre.html">Sobre</a></li>
+                    <li><a href="monitoramento.html">Monitoramento</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="integrantes.html">Equipe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="layout-container" style="padding-top: 60px;">
+        <section class="sobre-section">
+            <h2>Nossa Missão com a Resiliência Planetária</h2>
+            <p>A OrbitSafe nasceu da convergência entre a infraestrutura aeroespacial avançada e o desenvolvimento sustentável. Diante do aumento global de eventos climáticos extremos, as comunicações terrestres tradicionais tornaram-se vulneráveis. Nossa arquitetura garante que hospitais, agências de segurança e comunidades isoladas mantenham pontes de dados seguras e de alta velocidade por meio de links de órbita via satélite otimizados em tempo real por inteligência artificial.</p>
+        </section>
+
+        <section class="valores-section">
+            <h2>Pilares do Nosso Ecossistema</h2>
+            <p>Os princípios tecnológicos e éticos fundamentais que governam a engenharia de dados e resiliência da OrbitSafe.</p>
+            
+            <div class="grid-valores">
+                <article>
+                    <h3>Segurança Espacial</h3>
+                    <p>Garantia de integridade absoluta através de criptografia pós-quântica fim a fim em todas as camadas de transmissão e controle orbital.</p>
+                </article>
+                <article>
+                    <h3>Impacto Global</h3>
+                    <p>Sustentabilidade integrada em primeiro lugar, projetando software eficiente que otimiza o gasto energético de supercomputadores de triagem.</p>
+                </article>
+                <article>
+                    <h3>Governança Aberta</h3>
+                    <p>Colaboração mútua com entidades governamentais e de direitos humanos, assegurando acesso democrático a largura de banda em crises civis.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <button id="btn-open-sos" title="Disparar Alerta SOS Emergencial">🚨</button>
+    <div id="modal-sos" class="modal-container">
+        <div class="modal-conteudo">
+            <button class="btn-fechar" id="btn-close-sos">&times;</button>
+            <h3><span>🚨</span> Solicitação Emergencial SOS</h3>
+            <p>Envie as coordenadas ou dados de falha crítica para triagem imediata.</p>
+            <form id="form-sos">
+                <div class="grupo-campo"><label for="nome-sos">Organização</label><input type="text" id="nome-sos"><span class="msg-erro" id="erro-nome-sos"></span></div>
+                <div class="grupo-campo"><label for="localizacao">Coordenadas</label><input type="text" id="localizacao"><span class="msg-erro" id="erro-localizacao"></span></div>
+                <div class="grupo-campo"><label for="gravidade">Nível de Criticidade</label><select id="gravidade"><option value="">Selecione...</option><option value="alto">Alto</option><option value="medio">Médio</option></select><span class="msg-erro" id="erro-gravidade"></span></div>
+                <div class="grupo-campo"><label for="mensagem-sos">Detalhes</label><textarea id="mensagem-sos" rows="3"></textarea><span class="msg-erro" id="erro-mensagem-sos"></span></div>
+                <button type="submit">Transmitir Sinal SOS</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-sos-feedback" class="modal-container">
+        <div class="modal-conteudo" style="text-align: center;">
+            <h3 style="justify-content: center; color: var(--success);">📡 Conexão Estabelecida</h3>
+            <p>Sinal de emergência transmitido com sucesso.</p>
+            <button class="btn-principal" id="btn-fechar-sos-feedback">Entendido</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="layout-container">
+            <p>&copy; 2026 ORBITSAFE. Todos os direitos reservados. Projeto Global Solution Front-End.</p>
+            <p>Status da Rede: <span style="color: var(--success); font-weight: 600;">● Operacional</span></p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
