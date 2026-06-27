@@ -272,6 +272,8 @@ body{
 
     margin-bottom:2rem;
 
+    text-align:center;
+
 }
 
 /* Texto dos cards */
@@ -409,6 +411,20 @@ body{
     color:white;
 
     cursor:pointer;
+
+/* ==================================================
+   BOTÃO SCROLL
+================================================== */
+
+html body #scrollTopBtn {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+html body #scrollTopBtn:hover {
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 0 15px rgba(0,207,255,0.4);
+}
 
 }
 /* ==========================================

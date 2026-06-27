@@ -662,7 +662,6 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTopBtn.style.cssText = [
         "position: fixed",
         "bottom: 100px",
-        "left: 25px",
         "width: 50px",
         "height: 50px",
         "border: 1px solid rgba(0,207,255,0.3)",
@@ -682,16 +681,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     scrollTopBtn.addEventListener("click", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    scrollTopBtn.addEventListener("mouseenter", function () {
-        this.style.transform = "scale(1.1)";
-        this.style.boxShadow = "0 0 15px rgba(0,207,255,0.4)";
-    });
-
-    scrollTopBtn.addEventListener("mouseleave", function () {
-        this.style.transform = "scale(1)";
-        this.style.boxShadow = "none";
     });
 
     window.addEventListener("scroll", function () {
