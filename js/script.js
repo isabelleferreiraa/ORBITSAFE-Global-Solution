@@ -768,3 +768,106 @@ document.addEventListener("DOMContentLoaded", function () {
     ].join("\n");
     document.head.appendChild(style);
 })();
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // MENU HAMBÚRGUER RESPONSIVO 
+    const hamburger = document.querySelector(".cabecalho__hamburger");
+    const menuLista = document.querySelector(".cabecalho__lista");
+
+    if (hamburger && menuLista) {
+        hamburger.addEventListener("click", () => {
+            menuLista.classList.toggle("active");
+        });
+    }
+
+    // CREDENCIAIS PADRÕES DO SISTEMA 
+    const USUARIO_PADRAO = "admin";
+    const SENHA_PADRAO = "orbitsafe2026";
+
+    // LÓGICA DE CADASTRO DE NOVO COLABORADOR 
+    const formCadastro = document.getElementById("formCadastro");
+    if (formCadastro) {
+        formCadastro.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const cadUsuario = document.getElementById("cadUsuario").value.trim();
+            const cadEmail = document.getElementById("cadEmail").value.trim();
+            const cadSenha = document.getElementById("cadSenha").value;
+            const msgSucesso = document.getElementById("msgSucessoCad");
+            const msgErro = document.getElementById("msgErroCad");
+
+            // Reseta mensagens de feedback
+            msgSucesso.style.display = "none";
+            msgErro.style.display = "none";
+
+            // Impede criar um usuário com o mesmo nome do admin padrão
+            if (cadUsuario.toLowerCase() === USUARIO_PADRAO) {
+                msgErro.textContent = "❌ Usuário já existente no sistema.";
+                msgErro.style.display = "block";
+                return;
+            }
+
+            // Validação simples de formato de e-mail usando Regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(cadEmail)) {
+                msgErro.textContent = "❌ Por favor, insira um e-mail válido.";
+                msgErro.style.display = "block";
+                return;
+            }
+
+            // Verifica se o usuário já existe no localStorage
+            if (localStorage.getItem(cadUsuario)) {
+                msgErro.textContent = "❌ Usuário já existente no sistema.";
+                msgErro.style.display = "block";
+            } else {
+                // Cria um objeto para salvar os dados do colaborador
+                const dadosColaborador = {
+                    email: cadEmail,
+                    senha: cadSenha
+                };
+
+                // Salva no localStorage convertendo o objeto para texto (JSON)
+                localStorage.setItem(cadUsuario, JSON.stringify(dadosColaborador));
+
+                msgSucesso.style.display = "block";
+                formCadastro.reset();
+            }
+        });
+    }
+
+    // LÓGICA DE AUTENTICAÇÃO 
+    const formLogin = document.getElementById("formLogin");
+    if (formLogin) {
+        formLogin.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const usuario = document.getElementById("loginUsuario").value.trim();
+            const senha = document.getElementById("loginSenha").value;
+            const msgErro = document.getElementById("msgErroLogin");
+
+            msgErro.style.display = "none";
+
+            // Tenta buscar o cadastro correspondente no localStorage
+            const dadosSalvos = localStorage.getItem(usuario);
+            let senhaSalva = null;
+
+            // Se encontrou dados do usuário, transforma o texto de volta em objeto para ler a senha
+            if (dadosSalvos) {
+                try {
+                    const colaborador = JSON.parse(dadosSalvos);
+                    senhaSalva = colaborador.senha;
+                } catch (err) {
+                    // Caso o dado antigo ainda esteja no formato antigo (só texto)
+                    senhaSalva = dadosSalvos;
+                }
+            }
+
+            // Valida as credenciais (seja o administrador padrão ou conta cadastrada)
+            if ((usuario === USUARIO_PADRAO && senha === SENHA_PADRAO) || (senhaSalva && senhaSalva === senha)) {
+                sessionStorage.setItem("logado", "true");
+                window.location.href = "dashboard.html"; 
+            } else {
+                msgErro.style.display = "block";
+            }
+        });
+    }
+});
