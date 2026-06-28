@@ -10,7 +10,7 @@
 ---
 
 <p align="center">
-  <img src="assets/home.png" alt="Demonstração do OrbitSafe" width="600px">
+  <img src="./assets/home.png" alt="Demonstração do OrbitSafe" width="600px">
 </p>
 
 ## 📌 Descrição do Projeto
@@ -41,21 +41,23 @@ O repositório está organizado de forma modular, separando as preocupações gl
 
 <pre>
 ORBITSAFE/
-├── assets/                       # Imagens de perfil dos integrantes
+├── assets/                       # Armazenamento de imagens e vídeos
 │   ├── github.png                # Ícone do GitHub para links sociais   
 │   ├── integranteIsabelle.png
+│   ├── home.png
 │   ├── integranteMarina.png
 │   └── integranteMilena.png      
 │   ├── linkedin.png              # Ícone do LinkedIn para links sociais
 │   └── logo.png                  # Logotipo oficial do OrbitSafe
 │   └── videoterra.mp4            # Vídeo de fundo/demonstração da Terra
-├── css/                          # Estilização modular
+├── css/                        
 │   ├── contato.css               # Estilo do formulário de contato e feedbacks
 │   ├── dashboard.css             # Estilo do painel de dados (gráficos, tabs, tabelas)
 │   ├── faq.css                   # Estilo visual do FAQ
 │   ├── home.css                  # Estilo específico da página Home
 │   ├── integrantes.css           # Estilo dos cards de perfil e links sociais
-│   ├── main.css                  # Design system global, menu hamburger, modal e resets
+│   ├── login.css                 # Estilo dos cards de login e cadastro
+│   ├── main.css                  # Design system global
 │   ├── monitoramento.css         # Estilo da Central de Monitoramento (radar e alertas)
 │   └── sobre.css                 # Estilo específico da página Sobre
 ├── js/
@@ -65,6 +67,7 @@ ORBITSAFE/
 │   ├── dashboard.html            # Simulação estatísticas dashboard
 │   ├── faq.html                  # Perguntas frequentes para auxílio
 │   ├── integrantes.html          # Detalhes profissionais da equipe desenvolvedora
+│   ├── login.html                # Login e cadastro de colaboradores
 │   ├── monitoramento.html        # Simulação Telemetria ao vivo da constelação
 │   └── sobre.html                # Nossa missão e valores humanitários
 ├── index.html                    # Página inicial (Hero & recursos do sistema)
@@ -111,8 +114,7 @@ Abaixo encontram-se os detalhes dos desenvolvedores responsáveis pela arquitetu
 
 Para dúvidas, suporte técnico ou informações sobre o ecossistema OrbitSafe, entre em contato com a equipe de desenvolvimento através dos canais abaixo:
 
-* **E-mail Institucional da Equipe:**
-* **Dúvidas Rápidas:** Abra uma [*Issue* diretamente no nosso repositório do GitHub](https://github.com/AndreL050690/ORBITSAFE/issues).
+* **Dúvidas:** Abra uma [*Issue* diretamente no nosso repositório do GitHub](https://github.com/AndreL050690/ORBITSAFE/issues).
 
 ---
 OrbitSafe 2026 — Fiap Global Solution. Todos os direitos reservados.
