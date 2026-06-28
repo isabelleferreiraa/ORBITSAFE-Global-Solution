@@ -518,29 +518,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /* ==========================================
-        TYPED TEXT EFFECT (Home Hero)
-       ========================================== */
-    const heroTitle = document.querySelector(".hero__title");
-    if (heroTitle && heroTitle.textContent.trim() === "ORBITSAFE") {
-        const texto = "ORBITSAFE";
-        heroTitle.textContent = "";
-        heroTitle.style.borderRight = "3px solid var(--primary)";
-
-        let idx = 0;
-        const digitarTimer = setInterval(function () {
-            heroTitle.textContent += texto[idx];
-            idx++;
-            if (idx >= texto.length) {
-                clearInterval(digitarTimer);
-                // Remove cursor piscante depois de digitar
-                setTimeout(function () {
-                    heroTitle.style.borderRight = "none";
-                }, 1500);
-            }
-        }, 150);
-    }
-
-    /* ==========================================
         SMOOTH SCROLL PARA LINKS INTERNOS
        ========================================== */
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
@@ -692,19 +669,6 @@ document.addEventListener("DOMContentLoaded", function () {
             scrollTopBtn.style.pointerEvents = "none";
         }
     });
-
-    /* ==========================================
-        DATA/HORA AO VIVO NO RODAPÉ
-       ========================================== */
-    const rodape = document.querySelector(".rodape p");
-    if (rodape) {
-        const textoOriginal = rodape.textContent;
-        setInterval(function () {
-            const agora = new Date();
-            const hora = agora.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-            rodape.textContent = textoOriginal + " | " + hora;
-        }, 1000);
-    }
 
     /* ==========================================
         ANIMAÇÃO DA LINHA SVG DO GRÁFICO (Dashboard)
