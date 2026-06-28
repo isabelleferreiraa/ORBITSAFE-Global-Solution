@@ -622,3 +622,38 @@ html body #scrollTopBtn:hover {
         font-size: 1.6rem;
     }
 }
+/* ==================================================
+   ANIMAÇÃO DE BRILHO PULSANTE (APENAS O BRILHO PULSA)
+================================================== */
+
+.hero__title {
+    font-size: var(--titulo-main);
+    font-weight: bold;
+    color: #ffffff;
+    
+    /* Mantém o texto estático no lugar */
+    transform: none !important; 
+    
+    /* Executa o pulso de luz: 1s por ciclo, 2 vezes (2 segundos no total) */
+    animation: brilhoIsolado 3s ease-in-out 1;
+    
+    /* Garante que o brilho termine no estado padrão estável */
+    animation-fill-mode: forwards;
+}
+
+/* Controla estritamente a intensidade da luz azul, sem mexer no tamanho do texto */
+@keyframes brilhoIsolado {
+    0% {
+        text-shadow: 0 0 20px rgba(0, 207, 255, 0.8);
+    }
+    50% {
+        /* O pico do pulso: o brilho expande e ganha camadas mais intensas */
+        text-shadow: 0 0 40px rgba(0, 207, 255, 1), 
+                     0 0 70px rgba(0, 207, 255, 0.8), 
+                     0 0 100px rgba(0, 207, 255, 0.4);
+    }
+    100% {
+        /* Retorna ao brilho padrão de descanso */
+        text-shadow: 0 0 20px rgba(0, 207, 255, 0.8);
+    }
+}
